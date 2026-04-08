@@ -24,15 +24,18 @@
 ---
 
 ## 📂 Структура репозитория
+
+```
 templates/
 ├── categories.json
 ├── <category>/
-│ ├── category.json
-│ ├── templates.json
-│ └── <template>/
-│ ├── versions.json
-│ └── <version>/
-│ ├── template.json
-│ ├── readme.md
-│ ├── preview.png
-│ └── meta.json
+│   ├── category.json
+│   ├── templates.json
+│   └── <template>/
+│       ├── versions.json
+│       └── <version>/
+│           ├── template.json
+│           ├── readme.md
+│           ├── preview.png
+│           └── meta.json
+```
