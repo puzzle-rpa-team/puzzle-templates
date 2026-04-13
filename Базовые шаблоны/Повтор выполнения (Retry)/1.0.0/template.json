@@ -1,0 +1,998 @@
+{
+  "type": "procedures_defreturn",
+  "id": "7ijoTb+Hc2hz_c$L4v[o",
+  "extraState": {
+    "procedureId": "WkCCs6gBcA]zYw3sQNm]",
+    "fullSerialization": true,
+    "params": [
+      {
+        "name": "params",
+        "id": "S-6vnl^W/`l%$asr,:dO",
+        "paramId": ":W(Zi_F~/TZMz;i6H7;]"
+      },
+      {
+        "name": "max_retries",
+        "id": "retry_param_max_retries",
+        "paramId": "dHVSh+9;I]ZzRTa]zSD{"
+      },
+      {
+        "name": "retry_delay",
+        "id": "(nj8~U:L=,obEyKw;@c|",
+        "paramId": "9Iu:ETiK{{[sA;_1+$pT"
+      }
+    ]
+  },
+  "icons": {
+    "comment": {
+      "text": "Опишите эту функцию…",
+      "pinned": false,
+      "height": 80,
+      "width": 160
+    }
+  },
+  "fields": {
+    "NAME": "retry_execute"
+  },
+  "inputs": {
+    "STACK": {
+      "block": {
+        "type": "group_block",
+        "id": "UP-[JwKJHifSnb:Myy5W",
+        "fields": {
+          "FIELDVALUE": "Инициализация результата выполнения функции"
+        },
+        "inputs": {
+          "DO": {
+            "block": {
+              "type": "variables_set",
+              "id": "ue~uO]n}doSSly.(=XgQ",
+              "fields": {
+                "VAR": {
+                  "id": "retry_result_var",
+                  "name": "execution_result",
+                  "type": ""
+                }
+              },
+              "inputs": {
+                "VALUE": {
+                  "block": {
+                    "type": "object",
+                    "id": "=ZE$+#:8]N.@CB.40D)5",
+                    "inputs": {
+                      "MEMBERS": {
+                        "block": {
+                          "type": "member",
+                          "id": "(ZA+ob72Ko)_$OtH70)+",
+                          "fields": {
+                            "MEMBER_NAME": "status"
+                          },
+                          "inputs": {
+                            "MEMBER_VALUE": {
+                              "block": {
+                                "type": "text",
+                                "id": "r7h+N)dw$1{R5*)aqG%2",
+                                "fields": {
+                                  "TEXT": "error"
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "member",
+                              "id": "h)XzqJLsdCBG$H8N{[Ah",
+                              "fields": {
+                                "MEMBER_NAME": "message"
+                              },
+                              "inputs": {
+                                "MEMBER_VALUE": {
+                                  "block": {
+                                    "type": "text_join",
+                                    "id": "^2K28TTt9!*}BXvnsfH.",
+                                    "extraState": {
+                                      "itemCount": 0
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "member",
+                                  "id": "h$AzF!-^gD6(1^RcTJK+",
+                                  "fields": {
+                                    "MEMBER_NAME": "data"
+                                  },
+                                  "inputs": {
+                                    "MEMBER_VALUE": {
+                                      "block": {
+                                        "type": "object",
+                                        "id": "F@C9@xgCeM7vHUwLG*D]",
+                                        "inputs": {
+                                          "MEMBERS": {
+                                            "block": {
+                                              "type": "member",
+                                              "id": "=YJmJY+e`,qY^%IIV)]S",
+                                              "fields": {
+                                                "MEMBER_NAME": "attempts_used"
+                                              },
+                                              "inputs": {
+                                                "MEMBER_VALUE": {
+                                                  "block": {
+                                                    "type": "math_number",
+                                                    "id": "x*YzZ~ua!o3Gz@Lsh4J9",
+                                                    "fields": {
+                                                      "NUM": 0
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "next": {
+                                                "block": {
+                                                  "type": "member",
+                                                  "id": "3yg|rsR-Hq6SY_xj,9`v",
+                                                  "fields": {
+                                                    "MEMBER_NAME": "result"
+                                                  },
+                                                  "inputs": {
+                                                    "MEMBER_VALUE": {
+                                                      "block": {
+                                                        "type": "text_join",
+                                                        "id": "P?^Gn~OKfY:B~8[iIM5T",
+                                                        "extraState": {
+                                                          "itemCount": 0
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "next": {
+                                                    "block": {
+                                                      "type": "member",
+                                                      "id": "i]w.14i=xUB8hC(7QN;(",
+                                                      "fields": {
+                                                        "MEMBER_NAME": "errors"
+                                                      },
+                                                      "inputs": {
+                                                        "MEMBER_VALUE": {
+                                                          "block": {
+                                                            "type": "lists_create_with",
+                                                            "id": "Xs;A)]Lezv(3Ps48/B$0",
+                                                            "extraState": {
+                                                              "itemCount": 0
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "member",
+                                      "id": "35@uz9=u~KS|(5W/k1,d",
+                                      "fields": {
+                                        "MEMBER_NAME": "error_description"
+                                      },
+                                      "inputs": {
+                                        "MEMBER_VALUE": {
+                                          "block": {
+                                            "type": "text_join",
+                                            "id": "I+TkP]5ZVFpBHSOEP8h]",
+                                            "extraState": {
+                                              "itemCount": 0
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "next": {
+          "block": {
+            "type": "group_block",
+            "id": "c-|GuE#S_d):;YHb]WQe",
+            "fields": {
+              "FIELDVALUE": "Цикл попыток"
+            },
+            "inputs": {
+              "DO": {
+                "block": {
+                  "type": "variables_set",
+                  "id": "c=m!fx3TD!p@1L^58`qZ",
+                  "fields": {
+                    "VAR": {
+                      "id": "9UhhpR,eQ5@Q=DJzui(j",
+                      "name": "attempt",
+                      "type": ""
+                    }
+                  },
+                  "inputs": {
+                    "VALUE": {
+                      "block": {
+                        "type": "math_number",
+                        "id": "pIOm3~483Z~Ih!3yJxy4",
+                        "fields": {
+                          "NUM": 0
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "controls_repeat_ext",
+                      "id": "KDHY_M#Bwwfi{Cl/QwKm",
+                      "inputs": {
+                        "TIMES": {
+                          "block": {
+                            "type": "variables_get",
+                            "id": "zp=6@y3!;jwCpax3YK-2",
+                            "fields": {
+                              "VAR": {
+                                "id": "retry_param_max_retries",
+                                "name": "max_retries",
+                                "type": ""
+                              }
+                            }
+                          }
+                        },
+                        "DO": {
+                          "block": {
+                            "type": "try_except",
+                            "id": "~f^I0:%)I#Jce1^S]Y[h",
+                            "inputs": {
+                              "try": {
+                                "block": {
+                                  "type": "group_block",
+                                  "id": "*d1/o2SCR@kYn#{k*(QH",
+                                  "fields": {
+                                    "FIELDVALUE": "Основная логика функции"
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "group_block",
+                                      "id": "{m-0I@7$Xk0H{Y(%e+%X",
+                                      "fields": {
+                                        "FIELDVALUE": "Сохранение результата при успешном выполнении"
+                                      },
+                                      "inputs": {
+                                        "DO": {
+                                          "block": {
+                                            "type": "add_to_dict",
+                                            "id": ",guzs9=d6v}JYy{uxHPw",
+                                            "inputs": {
+                                              "dict": {
+                                                "block": {
+                                                  "type": "variables_get",
+                                                  "id": "ZF_Yky7|;8o]8-UhzNcX",
+                                                  "fields": {
+                                                    "VAR": {
+                                                      "id": "retry_result_var",
+                                                      "name": "execution_result",
+                                                      "type": ""
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "key": {
+                                                "block": {
+                                                  "type": "text",
+                                                  "id": "wU}!V3!?1tPBT}clw=#_",
+                                                  "fields": {
+                                                    "TEXT": "status"
+                                                  }
+                                                }
+                                              },
+                                              "value": {
+                                                "block": {
+                                                  "type": "text",
+                                                  "id": "LR%}7/IMWvz^D:Hgc?f0",
+                                                  "fields": {
+                                                    "TEXT": "success"
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "next": {
+                                              "block": {
+                                                "type": "add_to_dict",
+                                                "id": "=!g;8^g9tVHuQ}:4`MS/",
+                                                "inputs": {
+                                                  "dict": {
+                                                    "block": {
+                                                      "type": "variables_get",
+                                                      "id": "_yVe)l~Sm,bKx,qj+cki",
+                                                      "fields": {
+                                                        "VAR": {
+                                                          "id": "retry_result_var",
+                                                          "name": "execution_result",
+                                                          "type": ""
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "key": {
+                                                    "block": {
+                                                      "type": "text",
+                                                      "id": "_y(G,AYnu?zA%MCQEij`",
+                                                      "fields": {
+                                                        "TEXT": "message"
+                                                      }
+                                                    }
+                                                  },
+                                                  "value": {
+                                                    "block": {
+                                                      "type": "text",
+                                                      "id": "W]_C2ukejJ=(_Ht_1TnU",
+                                                      "fields": {
+                                                        "TEXT": "Успешно выполнено"
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "next": {
+                                                  "block": {
+                                                    "type": "nested_path_write",
+                                                    "id": "rV.9GxS!NZv.zcb#AGKU",
+                                                    "fields": {
+                                                      "OPERATION": "set"
+                                                    },
+                                                    "inputs": {
+                                                      "DICT": {
+                                                        "block": {
+                                                          "type": "variables_get",
+                                                          "id": "|PdY;s#5ynq78L^}|K94",
+                                                          "fields": {
+                                                            "VAR": {
+                                                              "id": "retry_result_var",
+                                                              "name": "execution_result",
+                                                              "type": ""
+                                                            }
+                                                          }
+                                                        }
+                                                      },
+                                                      "PATH": {
+                                                        "shadow": {
+                                                          "type": "text",
+                                                          "fields": {
+                                                            "TEXT": "data.value"
+                                                          }
+                                                        },
+                                                        "block": {
+                                                          "type": "text",
+                                                          "id": ":Y?FLUv~%~_V:u^Rwdzk",
+                                                          "fields": {
+                                                            "TEXT": "data.attempts_used"
+                                                          }
+                                                        }
+                                                      },
+                                                      "VALUE": {
+                                                        "shadow": {
+                                                          "type": "text",
+                                                          "fields": {
+                                                            "TEXT": ""
+                                                          }
+                                                        },
+                                                        "block": {
+                                                          "type": "math_arithmetic",
+                                                          "id": "uByT4^v?sr~5abg=PcTX",
+                                                          "fields": {
+                                                            "OP": "ADD"
+                                                          },
+                                                          "inputs": {
+                                                            "A": {
+                                                              "shadow": {
+                                                                "type": "math_number",
+                                                                "fields": {
+                                                                  "NUM": 1
+                                                                }
+                                                              },
+                                                              "block": {
+                                                                "type": "variables_get",
+                                                                "id": "jq$eB08udpxTpau-^Tpb",
+                                                                "fields": {
+                                                                  "VAR": {
+                                                                    "id": "9UhhpR,eQ5@Q=DJzui(j",
+                                                                    "name": "attempt",
+                                                                    "type": ""
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "B": {
+                                                              "shadow": {
+                                                                "type": "math_number",
+                                                                "id": "Aum:3c0j?t+D,Z}t4K/7",
+                                                                "fields": {
+                                                                  "NUM": 1
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "next": {
+                                                      "block": {
+                                                        "type": "nested_path_write",
+                                                        "id": "6#WQ$2dfFnRlmnBQS-nW",
+                                                        "fields": {
+                                                          "OPERATION": "set"
+                                                        },
+                                                        "inputs": {
+                                                          "DICT": {
+                                                            "block": {
+                                                              "type": "variables_get",
+                                                              "id": "i$x-#V`$=a_!p%xb/*Kw",
+                                                              "fields": {
+                                                                "VAR": {
+                                                                  "id": "retry_result_var",
+                                                                  "name": "execution_result",
+                                                                  "type": ""
+                                                                }
+                                                              }
+                                                            }
+                                                          },
+                                                          "PATH": {
+                                                            "shadow": {
+                                                              "type": "text",
+                                                              "fields": {
+                                                                "TEXT": "data.value"
+                                                              }
+                                                            },
+                                                            "block": {
+                                                              "type": "text",
+                                                              "id": "[*:Aj7A?R5Z~M/K~DpgF",
+                                                              "fields": {
+                                                                "TEXT": "data.result"
+                                                              }
+                                                            }
+                                                          },
+                                                          "VALUE": {
+                                                            "shadow": {
+                                                              "type": "text",
+                                                              "fields": {
+                                                                "TEXT": ""
+                                                              }
+                                                            },
+                                                            "block": {
+                                                              "type": "text_join",
+                                                              "id": "$*kx!vDVb?;obZD96QWG",
+                                                              "extraState": {
+                                                                "itemCount": 0
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "procedures_ifreturn",
+                                          "id": "43?F-5_B%4E.5Z0kcs|P",
+                                          "extraState": "<mutation value=\"1\"></mutation>",
+                                          "inputs": {
+                                            "CONDITION": {
+                                              "block": {
+                                                "type": "logic_boolean",
+                                                "id": "^](rBd^{p40OJJ!=sWLZ",
+                                                "fields": {
+                                                  "BOOL": "TRUE"
+                                                }
+                                              }
+                                            },
+                                            "VALUE": {
+                                              "block": {
+                                                "type": "variables_get",
+                                                "id": "X-*sAr3ixY4?x_HqZ?^j",
+                                                "fields": {
+                                                  "VAR": {
+                                                    "id": "retry_result_var",
+                                                    "name": "execution_result",
+                                                    "type": ""
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "except": {
+                                "block": {
+                                  "type": "math_change",
+                                  "id": "8RG?O.4`8g^GKp*=#x?.",
+                                  "fields": {
+                                    "VAR": {
+                                      "id": "9UhhpR,eQ5@Q=DJzui(j",
+                                      "name": "attempt",
+                                      "type": ""
+                                    }
+                                  },
+                                  "inputs": {
+                                    "DELTA": {
+                                      "shadow": {
+                                        "type": "math_number",
+                                        "id": "!)N8L.2+6+oz1|F[x/#W",
+                                        "fields": {
+                                          "NUM": 1
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "variables_set",
+                                      "id": "voaGBp7l,U@RxF~ZI6Aq",
+                                      "fields": {
+                                        "VAR": {
+                                          "id": "rlp:P3XnhP`#*~QHr,Ms",
+                                          "name": "error_message",
+                                          "type": ""
+                                        }
+                                      },
+                                      "inputs": {
+                                        "VALUE": {
+                                          "block": {
+                                            "type": "text_join",
+                                            "id": "YskHf-=a[B+]drSBY)K:",
+                                            "extraState": {
+                                              "itemCount": 2
+                                            },
+                                            "inputs": {
+                                              "ADD0": {
+                                                "block": {
+                                                  "type": "f_string",
+                                                  "id": "=#6Fdurr7I9nUVHLA4ta",
+                                                  "extraState": {},
+                                                  "fields": {
+                                                    "TEXT": "Ошибка при попытке {attempt}. Подробнее: "
+                                                  }
+                                                }
+                                              },
+                                              "ADD1": {
+                                                "block": {
+                                                  "type": "variables_get",
+                                                  "id": ".dLhm!Lo`uO=n8n|Yx]I",
+                                                  "fields": {
+                                                    "VAR": {
+                                                      "id": "retry_error_description_var",
+                                                      "name": "error_description",
+                                                      "type": ""
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "nested_path_write",
+                                          "id": "wt=MHvsS.)f[~-U(jV:?",
+                                          "fields": {
+                                            "OPERATION": "append"
+                                          },
+                                          "inputs": {
+                                            "DICT": {
+                                              "block": {
+                                                "type": "variables_get",
+                                                "id": "5m-x6JS5Wvi1MpC?*kkT",
+                                                "fields": {
+                                                  "VAR": {
+                                                    "id": "retry_result_var",
+                                                    "name": "execution_result",
+                                                    "type": ""
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "PATH": {
+                                              "shadow": {
+                                                "type": "text",
+                                                "fields": {
+                                                  "TEXT": "data.value"
+                                                }
+                                              },
+                                              "block": {
+                                                "type": "text",
+                                                "id": "kql.9eUp:TNMsfXGn%92",
+                                                "fields": {
+                                                  "TEXT": "data.errors"
+                                                }
+                                              }
+                                            },
+                                            "VALUE": {
+                                              "shadow": {
+                                                "type": "text",
+                                                "fields": {
+                                                  "TEXT": ""
+                                                }
+                                              },
+                                              "block": {
+                                                "type": "variables_get",
+                                                "id": "k2~h/Q(7s@:]BLJA(,E;",
+                                                "fields": {
+                                                  "VAR": {
+                                                    "id": "rlp:P3XnhP`#*~QHr,Ms",
+                                                    "name": "error_message",
+                                                    "type": ""
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "write_log",
+                                              "id": ",7r?Q+hFmaKJmmSNQ#}9",
+                                              "fields": {
+                                                "FIELDVALUE1": "warning"
+                                              },
+                                              "inputs": {
+                                                "VALUE1": {
+                                                  "shadow": {
+                                                    "type": "text",
+                                                    "fields": {
+                                                      "TEXT": ""
+                                                    }
+                                                  },
+                                                  "block": {
+                                                    "type": "variables_get",
+                                                    "id": "kC|[oAn@h#/VmJ8@?$Bt",
+                                                    "fields": {
+                                                      "VAR": {
+                                                        "id": "rlp:P3XnhP`#*~QHr,Ms",
+                                                        "name": "error_message",
+                                                        "type": ""
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "next": {
+                                                "block": {
+                                                  "type": "controls_if",
+                                                  "id": "UN!QaPyPg)laN-7SJy`:",
+                                                  "inputs": {
+                                                    "IF0": {
+                                                      "block": {
+                                                        "type": "logic_compare",
+                                                        "id": "!t7;cLp{)qJC?Bo^^Pcd",
+                                                        "fields": {
+                                                          "OP": "LT"
+                                                        },
+                                                        "inputs": {
+                                                          "A": {
+                                                            "block": {
+                                                              "type": "variables_get",
+                                                              "id": ":_U,7P+fLkLJ%J?s!3J:",
+                                                              "fields": {
+                                                                "VAR": {
+                                                                  "id": "9UhhpR,eQ5@Q=DJzui(j",
+                                                                  "name": "attempt",
+                                                                  "type": ""
+                                                                }
+                                                              }
+                                                            }
+                                                          },
+                                                          "B": {
+                                                            "block": {
+                                                              "type": "variables_get",
+                                                              "id": "2T|ryAl1kHuc*D;re^VR",
+                                                              "fields": {
+                                                                "VAR": {
+                                                                  "id": "retry_param_max_retries",
+                                                                  "name": "max_retries",
+                                                                  "type": ""
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "DO0": {
+                                                      "block": {
+                                                        "type": "control_delay_2",
+                                                        "id": "EpW,TlUbdiv9Q17O,yb;",
+                                                        "inputs": {
+                                                          "VALUE1": {
+                                                            "block": {
+                                                              "type": "variables_get",
+                                                              "id": "2{.aPDWjr@^R?-6RA+#q",
+                                                              "fields": {
+                                                                "VAR": {
+                                                                  "id": "(nj8~U:L=,obEyKw;@c|",
+                                                                  "name": "retry_delay",
+                                                                  "type": ""
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "error_description": {
+                                "block": {
+                                  "type": "variables_get",
+                                  "id": "u.i!UEQ4BS,6KD|d=H!0",
+                                  "fields": {
+                                    "VAR": {
+                                      "id": "retry_error_description_var",
+                                      "name": "error_description",
+                                      "type": ""
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "group_block",
+                          "id": "Vu=cbUZO5$*GrEu`S!dD",
+                          "fields": {
+                            "FIELDVALUE": "Сохранение результата при ошибке"
+                          },
+                          "inputs": {
+                            "DO": {
+                              "block": {
+                                "type": "add_to_dict",
+                                "id": "}WMtkPx-KAl^jL67F.3h",
+                                "inline": false,
+                                "inputs": {
+                                  "dict": {
+                                    "block": {
+                                      "type": "variables_get",
+                                      "id": "y?Y~oSmWWYa95+lJuWXO",
+                                      "fields": {
+                                        "VAR": {
+                                          "id": "retry_result_var",
+                                          "name": "execution_result",
+                                          "type": ""
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "key": {
+                                    "block": {
+                                      "type": "text",
+                                      "id": "kpIzS8Si`Vm+}jEJSUF0",
+                                      "fields": {
+                                        "TEXT": "status"
+                                      }
+                                    }
+                                  },
+                                  "value": {
+                                    "block": {
+                                      "type": "text",
+                                      "id": "pGKj-_T#=8XcPGZLmPR2",
+                                      "fields": {
+                                        "TEXT": "error"
+                                      }
+                                    }
+                                  }
+                                },
+                                "next": {
+                                  "block": {
+                                    "type": "add_to_dict",
+                                    "id": "!;_b[(d%8x)IjKWnHFEt",
+                                    "inline": false,
+                                    "inputs": {
+                                      "dict": {
+                                        "block": {
+                                          "type": "variables_get",
+                                          "id": "v/S@L,~Wl:R8`m@-t~=#",
+                                          "fields": {
+                                            "VAR": {
+                                              "id": "retry_result_var",
+                                              "name": "execution_result",
+                                              "type": ""
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "key": {
+                                        "block": {
+                                          "type": "text",
+                                          "id": "=nj:D*3uu1~HD[pw-JVP",
+                                          "fields": {
+                                            "TEXT": "message"
+                                          }
+                                        }
+                                      },
+                                      "value": {
+                                        "block": {
+                                          "type": "f_string",
+                                          "id": "3KfVKwBFo+?PC?HP`s+z",
+                                          "extraState": {},
+                                          "fields": {
+                                            "TEXT": "Не удалось выполнить действие после {max_retries} попыток"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "next": {
+                                      "block": {
+                                        "type": "nested_path_write",
+                                        "id": "_RrWDJf$5aXvgWz)3T_u",
+                                        "fields": {
+                                          "OPERATION": "set"
+                                        },
+                                        "inputs": {
+                                          "DICT": {
+                                            "block": {
+                                              "type": "variables_get",
+                                              "id": "!GFcBoU$fA?XZh+~Qzu8",
+                                              "fields": {
+                                                "VAR": {
+                                                  "id": "retry_result_var",
+                                                  "name": "execution_result",
+                                                  "type": ""
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "PATH": {
+                                            "shadow": {
+                                              "type": "text",
+                                              "fields": {
+                                                "TEXT": "data.value"
+                                              }
+                                            },
+                                            "block": {
+                                              "type": "text",
+                                              "id": "6k4j~J*_DC)W%*W@VKEQ",
+                                              "fields": {
+                                                "TEXT": "data.attempts_used"
+                                              }
+                                            }
+                                          },
+                                          "VALUE": {
+                                            "shadow": {
+                                              "type": "text",
+                                              "fields": {
+                                                "TEXT": ""
+                                              }
+                                            },
+                                            "block": {
+                                              "type": "variables_get",
+                                              "id": "!dOcUfz:{5|#m}E2B)WH",
+                                              "fields": {
+                                                "VAR": {
+                                                  "id": "9UhhpR,eQ5@Q=DJzui(j",
+                                                  "name": "attempt",
+                                                  "type": ""
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "next": {
+                                          "block": {
+                                            "type": "add_to_dict",
+                                            "id": "}T7^GkM~ps[`1iMZuS{q",
+                                            "inline": false,
+                                            "inputs": {
+                                              "dict": {
+                                                "block": {
+                                                  "type": "variables_get",
+                                                  "id": ")avrljqpKAh2Iei:o5Of",
+                                                  "fields": {
+                                                    "VAR": {
+                                                      "id": "retry_result_var",
+                                                      "name": "execution_result",
+                                                      "type": ""
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "key": {
+                                                "block": {
+                                                  "type": "text",
+                                                  "id": "N,A%T$/f9wde#?r{ovGE",
+                                                  "fields": {
+                                                    "TEXT": "error_description"
+                                                  }
+                                                }
+                                              },
+                                              "value": {
+                                                "block": {
+                                                  "type": "variables_get",
+                                                  "id": "l,/2#CMy[v%Z1tv!u64@",
+                                                  "fields": {
+                                                    "VAR": {
+                                                      "id": "retry_error_description_var",
+                                                      "name": "error_description",
+                                                      "type": ""
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "next": {
+              "block": {
+                "type": "comment_block",
+                "id": "+0Bl2jp6O_i+,x[so]YZ",
+                "fields": {
+                  "TEXT": "📝 Комментарий\r\nВозврат результата"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "RETURN": {
+      "block": {
+        "type": "variables_get",
+        "id": "J4CN##VUXfNfTJP549/e",
+        "fields": {
+          "VAR": {
+            "id": "retry_result_var",
+            "name": "execution_result",
+            "type": ""
+          }
+        }
+      }
+    }
+  }
+}

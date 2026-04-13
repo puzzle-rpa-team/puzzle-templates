@@ -1,0 +1,7 @@
+{
+  "name": "Безопасное выполнение функции",
+  "description": "Выполняет функцию с обработкой ошибок и логированием",
+  "studio_version": "3.0.0",
+  "author": "Puzzle Team",
+  "dependencies": []
+}

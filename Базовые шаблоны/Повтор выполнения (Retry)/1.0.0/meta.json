@@ -1,0 +1,7 @@
+{
+  "name": "Повтор выполнения (Retry)",
+  "description": "Повторяет выполнение действия при ошибке",
+  "studio_version": "3.0.0",
+  "author": "Puzzle Team",
+  "dependencies": []
+}

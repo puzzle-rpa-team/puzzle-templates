@@ -1,0 +1,445 @@
+{
+  "type": "procedures_defreturn",
+  "id": "7ijoTb+Hc2hz_c$L4v[o",
+  "extraState": {
+    "procedureId": "m3/7$mT:ntnDl1F/{vP6",
+    "fullSerialization": true,
+    "params": [
+      {
+        "name": "params",
+        "id": "z;_mRYotJ,1xe/P4dvto",
+        "paramId": ":W(Zi_F~/TZMz;i6H7;]"
+      }
+    ]
+  },
+  "icons": {
+    "comment": {
+      "text": "Опишите эту функцию…",
+      "pinned": false,
+      "height": 80,
+      "width": 160
+    }
+  },
+  "fields": {
+    "NAME": "safe_execute"
+  },
+  "inputs": {
+    "STACK": {
+      "block": {
+        "type": "try_except",
+        "id": "4;izO:~vYS9^c+/!.S8A",
+        "inputs": {
+          "try": {
+            "block": {
+              "type": "group_block",
+              "id": "UP-[JwKJHifSnb:Myy5W",
+              "fields": {
+                "FIELDVALUE": "Инициализация результата выполнения функции"
+              },
+              "inputs": {
+                "DO": {
+                  "block": {
+                    "type": "variables_set",
+                    "id": "ue~uO]n}doSSly.(=XgQ",
+                    "fields": {
+                      "VAR": {
+                        "id": "dm4%SCu?%f_-P8F$J3uE",
+                        "name": "execution_result",
+                        "type": ""
+                      }
+                    },
+                    "inputs": {
+                      "VALUE": {
+                        "block": {
+                          "type": "object",
+                          "id": "=ZE$+#:8]N.@CB.40D)5",
+                          "inputs": {
+                            "MEMBERS": {
+                              "block": {
+                                "type": "member",
+                                "id": "(ZA+ob72Ko)_$OtH70)+",
+                                "fields": {
+                                  "MEMBER_NAME": "status"
+                                },
+                                "inputs": {
+                                  "MEMBER_VALUE": {
+                                    "block": {
+                                      "type": "text",
+                                      "id": "r7h+N)dw$1{R5*)aqG%2",
+                                      "fields": {
+                                        "TEXT": "error"
+                                      }
+                                    }
+                                  }
+                                },
+                                "next": {
+                                  "block": {
+                                    "type": "member",
+                                    "id": "h)XzqJLsdCBG$H8N{[Ah",
+                                    "fields": {
+                                      "MEMBER_NAME": "message"
+                                    },
+                                    "inputs": {
+                                      "MEMBER_VALUE": {
+                                        "block": {
+                                          "type": "text_join",
+                                          "id": "^2K28TTt9!*}BXvnsfH.",
+                                          "extraState": {
+                                            "itemCount": 0
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "next": {
+                                      "block": {
+                                        "type": "member",
+                                        "id": "h$AzF!-^gD6(1^RcTJK+",
+                                        "fields": {
+                                          "MEMBER_NAME": "data"
+                                        },
+                                        "inputs": {
+                                          "MEMBER_VALUE": {
+                                            "block": {
+                                              "type": "text_join",
+                                              "id": "O5aJ@1I`ZkU}d5:zTaQf",
+                                              "extraState": {
+                                                "itemCount": 0
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "next": {
+                                          "block": {
+                                            "type": "member",
+                                            "id": "o3PM/WMe1|su5CnF^mN5",
+                                            "fields": {
+                                              "MEMBER_NAME": "error_description"
+                                            },
+                                            "inputs": {
+                                              "MEMBER_VALUE": {
+                                                "block": {
+                                                  "type": "text_join",
+                                                  "id": "t!*h_lNmB~?Fi?~IiHU(",
+                                                  "extraState": {
+                                                    "itemCount": 0
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "next": {
+                "block": {
+                  "type": "group_block",
+                  "id": "*d1/o2SCR@kYn#{k*(QH",
+                  "fields": {
+                    "FIELDVALUE": "Основная логика функции"
+                  },
+                  "next": {
+                    "block": {
+                      "type": "group_block",
+                      "id": "{m-0I@7$Xk0H{Y(%e+%X",
+                      "fields": {
+                        "FIELDVALUE": "Сохранение результата"
+                      },
+                      "inputs": {
+                        "DO": {
+                          "block": {
+                            "type": "add_to_dict",
+                            "id": "zbUs#4AInrPI1%IWr~d8",
+                            "inputs": {
+                              "dict": {
+                                "block": {
+                                  "type": "variables_get",
+                                  "id": "@W=f%p68+L1D;?tu$iLU",
+                                  "fields": {
+                                    "VAR": {
+                                      "id": "dm4%SCu?%f_-P8F$J3uE",
+                                      "name": "execution_result",
+                                      "type": ""
+                                    }
+                                  }
+                                }
+                              },
+                              "key": {
+                                "block": {
+                                  "type": "text",
+                                  "id": "6`Bx:3t-dlJJ)[Y8r6kL",
+                                  "fields": {
+                                    "TEXT": "data"
+                                  }
+                                }
+                              },
+                              "value": {
+                                "block": {
+                                  "type": "text",
+                                  "id": "X~#$X7u%E}AlUgJNN`sl",
+                                  "fields": {
+                                    "TEXT": "Результат выполнения функции"
+                                  }
+                                }
+                              }
+                            },
+                            "next": {
+                              "block": {
+                                "type": "add_to_dict",
+                                "id": "+|oCu{~p}~[J!`A}lMsp",
+                                "inputs": {
+                                  "dict": {
+                                    "block": {
+                                      "type": "variables_get",
+                                      "id": "OC#UDR?mGU7anNI`#Ym4",
+                                      "fields": {
+                                        "VAR": {
+                                          "id": "dm4%SCu?%f_-P8F$J3uE",
+                                          "name": "execution_result",
+                                          "type": ""
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "key": {
+                                    "block": {
+                                      "type": "text",
+                                      "id": "t*a,7nQ=]bj01c}z7X7N",
+                                      "fields": {
+                                        "TEXT": "status"
+                                      }
+                                    }
+                                  },
+                                  "value": {
+                                    "block": {
+                                      "type": "text",
+                                      "id": "/aIp0w.d4uI:fwn#/9Ua",
+                                      "fields": {
+                                        "TEXT": "success"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "except": {
+            "block": {
+              "type": "group_block",
+              "id": "i@U-N+#wfr)Tbh~f6{!*",
+              "fields": {
+                "FIELDVALUE": "Обработка ошибки"
+              },
+              "inputs": {
+                "DO": {
+                  "block": {
+                    "type": "add_to_dict",
+                    "id": "9naz_._JRsSqE01#`TQI",
+                    "inputs": {
+                      "dict": {
+                        "block": {
+                          "type": "variables_get",
+                          "id": "]}V)$FcGq(kn-IJ.d90L",
+                          "fields": {
+                            "VAR": {
+                              "id": "dm4%SCu?%f_-P8F$J3uE",
+                              "name": "execution_result",
+                              "type": ""
+                            }
+                          }
+                        }
+                      },
+                      "key": {
+                        "block": {
+                          "type": "text",
+                          "id": "923em2B@q=q5DxF~U=Y$",
+                          "fields": {
+                            "TEXT": "message"
+                          }
+                        }
+                      },
+                      "value": {
+                        "block": {
+                          "type": "text",
+                          "id": "EUdG,!4#n{nOdA@;r3RH",
+                          "fields": {
+                            "TEXT": "Ошибка при выполнении функции."
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "add_to_dict",
+                        "id": "-S8`5vz.9`p*uxZ(nU=V",
+                        "inputs": {
+                          "dict": {
+                            "block": {
+                              "type": "variables_get",
+                              "id": ":h_JUYPZi#=ZK{(w}@h!",
+                              "fields": {
+                                "VAR": {
+                                  "id": "dm4%SCu?%f_-P8F$J3uE",
+                                  "name": "execution_result",
+                                  "type": ""
+                                }
+                              }
+                            }
+                          },
+                          "key": {
+                            "block": {
+                              "type": "text",
+                              "id": "ZTnh2dnO*gjzH8:l0_P9",
+                              "fields": {
+                                "TEXT": "status"
+                              }
+                            }
+                          },
+                          "value": {
+                            "block": {
+                              "type": "text",
+                              "id": "oJtS3w^*2isC4DxRxjM(",
+                              "fields": {
+                                "TEXT": "error"
+                              }
+                            }
+                          }
+                        },
+                        "next": {
+                          "block": {
+                            "type": "add_to_dict",
+                            "id": "QEjs.7.xP_0Fl@(sZk/g",
+                            "inputs": {
+                              "dict": {
+                                "block": {
+                                  "type": "variables_get",
+                                  "id": "9`ih)`CG,+s7h1mU~7aa",
+                                  "fields": {
+                                    "VAR": {
+                                      "id": "dm4%SCu?%f_-P8F$J3uE",
+                                      "name": "execution_result",
+                                      "type": ""
+                                    }
+                                  }
+                                }
+                              },
+                              "key": {
+                                "block": {
+                                  "type": "text",
+                                  "id": "P05rD{[1?3Xxp~L({uVO",
+                                  "fields": {
+                                    "TEXT": "error_description"
+                                  }
+                                }
+                              },
+                              "value": {
+                                "block": {
+                                  "type": "variables_get",
+                                  "id": ":~7`J{=RE$8~pX`#I$jY",
+                                  "fields": {
+                                    "VAR": {
+                                      "id": "|[WGN+D|*z`h=9tM}O^4",
+                                      "name": "error_description",
+                                      "type": ""
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "next": {
+                              "block": {
+                                "type": "write_log",
+                                "id": "*!?nn8btz?*+H}#M(SiT",
+                                "fields": {
+                                  "FIELDVALUE1": "error"
+                                },
+                                "inputs": {
+                                  "VALUE1": {
+                                    "shadow": {
+                                      "type": "text",
+                                      "fields": {
+                                        "TEXT": ""
+                                      }
+                                    },
+                                    "block": {
+                                      "type": "variables_get",
+                                      "id": "7%GV?evbK?$~Om6Zx9wD",
+                                      "fields": {
+                                        "VAR": {
+                                          "id": "|[WGN+D|*z`h=9tM}O^4",
+                                          "name": "error_description",
+                                          "type": ""
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "error_description": {
+            "block": {
+              "type": "variables_get",
+              "id": "y6s[I,`,W/3Dv)X153VY",
+              "fields": {
+                "VAR": {
+                  "id": "|[WGN+D|*z`h=9tM}O^4",
+                  "name": "error_description",
+                  "type": ""
+                }
+              }
+            }
+          }
+        },
+        "next": {
+          "block": {
+            "type": "comment_block",
+            "id": "+0Bl2jp6O_i+,x[so]YZ",
+            "fields": {
+              "TEXT": "📝 Комментарий\r\nВозврат результата"
+            }
+          }
+        }
+      }
+    },
+    "RETURN": {
+      "block": {
+        "type": "variables_get",
+        "id": "J4CN##VUXfNfTJP549/e",
+        "fields": {
+          "VAR": {
+            "id": "dm4%SCu?%f_-P8F$J3uE",
+            "name": "execution_result",
+            "type": ""
+          }
+        }
+      }
+    }
+  }
+}
