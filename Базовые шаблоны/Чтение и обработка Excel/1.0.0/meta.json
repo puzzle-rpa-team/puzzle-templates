@@ -1,0 +1,7 @@
+{
+  "name": "Чтение и обработка Excel",
+  "description": "Чтение Excel файла и обработка данных",
+  "studio_version": "3.0.0",
+  "author": "Puzzle Team",
+  "dependencies": []
+}

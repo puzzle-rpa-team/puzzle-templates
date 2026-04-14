@@ -1,0 +1,7 @@
+{
+  "name": "HTTP запрос",
+  "description": "Выполняет HTTP-запрос и возвращает результат",
+  "studio_version": "3.0.0",
+  "author": "Puzzle Team",
+  "dependencies": []
+}

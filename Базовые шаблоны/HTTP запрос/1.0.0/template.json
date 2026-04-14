@@ -1,0 +1,1967 @@
+{
+  "type": "procedures_defreturn",
+  "id": "7ijoTb+Hc2hz_c$L4v[o",
+  "extraState": {
+    "procedureId": "h)/:CBYX}Yz[}l;n+)uG",
+    "fullSerialization": true,
+    "params": [
+      {
+        "name": "url",
+        "id": ",+#rqL@-%z50m|v3)gN=",
+        "paramId": ":W(Zi_F~/TZMz;i6H7;]"
+      },
+      {
+        "name": "headers",
+        "id": ")W7N(]f67]dhaRDzTNY/",
+        "paramId": "G@12[NP@Q5z$#%5cr9/L"
+      },
+      {
+        "name": "params",
+        "id": "s$.;3q80C}.GhY-iDNhT",
+        "paramId": "CJF:P0Ah/*/A)QkD*NdV"
+      },
+      {
+        "name": "data",
+        "id": "FCA+DIzo.cEgbLS%l0L1",
+        "paramId": "/,sPX7dyT9Y?mL[ta=I8"
+      },
+      {
+        "name": "max_retries",
+        "id": "BFsaYuV(zGQHr_!vd81Y",
+        "paramId": "dHVSh+9;I]ZzRTa]zSD{"
+      },
+      {
+        "name": "retry_delay",
+        "id": "GAhpSNPMIpAeDG-$I?OA",
+        "paramId": "9Iu:ETiK{{[sA;_1+$pT"
+      }
+    ]
+  },
+  "icons": {
+    "comment": {
+      "text": "Опишите эту функцию…",
+      "pinned": false,
+      "height": 80,
+      "width": 160
+    }
+  },
+  "fields": {
+    "NAME": "execute_http_request"
+  },
+  "inputs": {
+    "STACK": {
+      "block": {
+        "type": "group_block",
+        "id": "UP-[JwKJHifSnb:Myy5W",
+        "fields": {
+          "FIELDVALUE": "Инициализация результата выполнения функции"
+        },
+        "inputs": {
+          "DO": {
+            "block": {
+              "type": "variables_set",
+              "id": "ue~uO]n}doSSly.(=XgQ",
+              "fields": {
+                "VAR": {
+                  "id": "retry_result_var",
+                  "name": "execution_result",
+                  "type": ""
+                }
+              },
+              "inputs": {
+                "VALUE": {
+                  "block": {
+                    "type": "object",
+                    "id": "=ZE$+#:8]N.@CB.40D)5",
+                    "inputs": {
+                      "MEMBERS": {
+                        "block": {
+                          "type": "member",
+                          "id": "(ZA+ob72Ko)_$OtH70)+",
+                          "fields": {
+                            "MEMBER_NAME": "status"
+                          },
+                          "inputs": {
+                            "MEMBER_VALUE": {
+                              "block": {
+                                "type": "text",
+                                "id": "r7h+N)dw$1{R5*)aqG%2",
+                                "fields": {
+                                  "TEXT": "error"
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "member",
+                              "id": "h)XzqJLsdCBG$H8N{[Ah",
+                              "fields": {
+                                "MEMBER_NAME": "message"
+                              },
+                              "inputs": {
+                                "MEMBER_VALUE": {
+                                  "block": {
+                                    "type": "text_join",
+                                    "id": "^2K28TTt9!*}BXvnsfH.",
+                                    "extraState": {
+                                      "itemCount": 0
+                                    }
+                                  }
+                                }
+                              },
+                              "next": {
+                                "block": {
+                                  "type": "member",
+                                  "id": "h$AzF!-^gD6(1^RcTJK+",
+                                  "fields": {
+                                    "MEMBER_NAME": "data"
+                                  },
+                                  "inputs": {
+                                    "MEMBER_VALUE": {
+                                      "block": {
+                                        "type": "object",
+                                        "id": "F@C9@xgCeM7vHUwLG*D]",
+                                        "inputs": {
+                                          "MEMBERS": {
+                                            "block": {
+                                              "type": "member",
+                                              "id": "=YJmJY+e`,qY^%IIV)]S",
+                                              "fields": {
+                                                "MEMBER_NAME": "attempts_used"
+                                              },
+                                              "inputs": {
+                                                "MEMBER_VALUE": {
+                                                  "block": {
+                                                    "type": "math_number",
+                                                    "id": "x*YzZ~ua!o3Gz@Lsh4J9",
+                                                    "fields": {
+                                                      "NUM": 0
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "next": {
+                                                "block": {
+                                                  "type": "member",
+                                                  "id": "*I=]wLYw@:Tu62LJ5Ng}",
+                                                  "fields": {
+                                                    "MEMBER_NAME": "status_code"
+                                                  },
+                                                  "inputs": {
+                                                    "MEMBER_VALUE": {
+                                                      "block": {
+                                                        "type": "math_number",
+                                                        "id": "[Rx.+?MKdu+aPUibJngb",
+                                                        "fields": {
+                                                          "NUM": 0
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "next": {
+                                                    "block": {
+                                                      "type": "member",
+                                                      "id": "3yg|rsR-Hq6SY_xj,9`v",
+                                                      "fields": {
+                                                        "MEMBER_NAME": "response_result"
+                                                      },
+                                                      "inputs": {
+                                                        "MEMBER_VALUE": {
+                                                          "block": {
+                                                            "type": "text_join",
+                                                            "id": "P?^Gn~OKfY:B~8[iIM5T",
+                                                            "extraState": {
+                                                              "itemCount": 0
+                                                            }
+                                                          }
+                                                        }
+                                                      },
+                                                      "next": {
+                                                        "block": {
+                                                          "type": "member",
+                                                          "id": "/@B.Luy{W#Q2QnMfu).C",
+                                                          "fields": {
+                                                            "MEMBER_NAME": "headers"
+                                                          },
+                                                          "inputs": {
+                                                            "MEMBER_VALUE": {
+                                                              "block": {
+                                                                "type": "create_dict",
+                                                                "id": "8k*+[25R`wvh?HCH{LH#"
+                                                              }
+                                                            }
+                                                          },
+                                                          "next": {
+                                                            "block": {
+                                                              "type": "member",
+                                                              "id": "i]w.14i=xUB8hC(7QN;(",
+                                                              "fields": {
+                                                                "MEMBER_NAME": "errors"
+                                                              },
+                                                              "inputs": {
+                                                                "MEMBER_VALUE": {
+                                                                  "block": {
+                                                                    "type": "lists_create_with",
+                                                                    "id": "Xs;A)]Lezv(3Ps48/B$0",
+                                                                    "extraState": {
+                                                                      "itemCount": 0
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "next": {
+                                    "block": {
+                                      "type": "member",
+                                      "id": "35@uz9=u~KS|(5W/k1,d",
+                                      "fields": {
+                                        "MEMBER_NAME": "error_description"
+                                      },
+                                      "inputs": {
+                                        "MEMBER_VALUE": {
+                                          "block": {
+                                            "type": "text_join",
+                                            "id": "I+TkP]5ZVFpBHSOEP8h]",
+                                            "extraState": {
+                                              "itemCount": 0
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "next": {
+          "block": {
+            "type": "group_block",
+            "id": "c-|GuE#S_d):;YHb]WQe",
+            "fields": {
+              "FIELDVALUE": "Цикл попыток"
+            },
+            "inputs": {
+              "DO": {
+                "block": {
+                  "type": "variables_set",
+                  "id": "c=m!fx3TD!p@1L^58`qZ",
+                  "fields": {
+                    "VAR": {
+                      "id": "9UhhpR,eQ5@Q=DJzui(j",
+                      "name": "attempt",
+                      "type": ""
+                    }
+                  },
+                  "inputs": {
+                    "VALUE": {
+                      "block": {
+                        "type": "math_number",
+                        "id": "pIOm3~483Z~Ih!3yJxy4",
+                        "fields": {
+                          "NUM": 0
+                        }
+                      }
+                    }
+                  },
+                  "next": {
+                    "block": {
+                      "type": "variables_set",
+                      "id": "fMQ{)?dD{$bxcK`J(gyL",
+                      "fields": {
+                        "VAR": {
+                          "id": "aD|4tkfEjXF(W_T4]K,P",
+                          "name": "response",
+                          "type": ""
+                        }
+                      },
+                      "inputs": {
+                        "VALUE": {
+                          "block": {
+                            "type": "lists_create_with",
+                            "id": "rqXaF6D*2XMu%jm,MEuW",
+                            "extraState": {
+                              "itemCount": 0
+                            }
+                          }
+                        }
+                      },
+                      "next": {
+                        "block": {
+                          "type": "controls_repeat_ext",
+                          "id": "KDHY_M#Bwwfi{Cl/QwKm",
+                          "inputs": {
+                            "TIMES": {
+                              "block": {
+                                "type": "variables_get",
+                                "id": "zp=6@y3!;jwCpax3YK-2",
+                                "fields": {
+                                  "VAR": {
+                                    "id": "BFsaYuV(zGQHr_!vd81Y",
+                                    "name": "max_retries",
+                                    "type": ""
+                                  }
+                                }
+                              }
+                            },
+                            "DO": {
+                              "block": {
+                                "type": "try_except",
+                                "id": "~f^I0:%)I#Jce1^S]Y[h",
+                                "inputs": {
+                                  "try": {
+                                    "block": {
+                                      "type": "group_block",
+                                      "id": "Ry$1h;-4lf:`2g$$a/$2",
+                                      "fields": {
+                                        "FIELDVALUE": "Проверка 1: Не пуст ли url"
+                                      },
+                                      "inputs": {
+                                        "DO": {
+                                          "block": {
+                                            "type": "controls_if",
+                                            "id": "$Y=9X1-^!F$Qs-lhx%5-",
+                                            "inputs": {
+                                              "IF0": {
+                                                "block": {
+                                                  "type": "logic_negate",
+                                                  "id": "|I!t|}qVvD2K9]EGnbc|",
+                                                  "inputs": {
+                                                    "BOOL": {
+                                                      "block": {
+                                                        "type": "variables_get",
+                                                        "id": "$U3zCXNN}ksrKPwNr)CG",
+                                                        "fields": {
+                                                          "VAR": {
+                                                            "id": ",+#rqL@-%z50m|v3)gN=",
+                                                            "name": "url",
+                                                            "type": ""
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "DO0": {
+                                                "block": {
+                                                  "type": "write_log",
+                                                  "id": "b4@UlXpvDVU[iS:9a]7n",
+                                                  "fields": {
+                                                    "FIELDVALUE1": "warning"
+                                                  },
+                                                  "inputs": {
+                                                    "VALUE1": {
+                                                      "block": {
+                                                        "type": "text",
+                                                        "id": "#sqOKPP,tXC4Kx%0=0y3",
+                                                        "fields": {
+                                                          "TEXT": "Не указан URL запроса"
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "next": {
+                                                    "block": {
+                                                      "type": "call_raise",
+                                                      "id": "3Vt#/ws9Hid/6_z#;KU+",
+                                                      "inputs": {
+                                                        "VALUE": {
+                                                          "shadow": {
+                                                            "type": "text",
+                                                            "fields": {
+                                                              "TEXT": ""
+                                                            }
+                                                          },
+                                                          "block": {
+                                                            "type": "text_join",
+                                                            "id": "z*;.DMm1qWn:8)}H~TVR",
+                                                            "extraState": {
+                                                              "itemCount": 2
+                                                            },
+                                                            "inputs": {
+                                                              "ADD0": {
+                                                                "block": {
+                                                                  "type": "text",
+                                                                  "id": "c;fOn?)61,(]=q9%|kt#",
+                                                                  "fields": {
+                                                                    "TEXT": "Не указан URL запроса: "
+                                                                  }
+                                                                }
+                                                              },
+                                                              "ADD1": {
+                                                                "block": {
+                                                                  "type": "variables_get",
+                                                                  "id": "#x;[R3eEgiOsq)9=*)mQ",
+                                                                  "fields": {
+                                                                    "VAR": {
+                                                                      "id": ",+#rqL@-%z50m|v3)gN=",
+                                                                      "name": "url",
+                                                                      "type": ""
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "group_block",
+                                          "id": "*d1/o2SCR@kYn#{k*(QH",
+                                          "fields": {
+                                            "FIELDVALUE": "Основная логика функции"
+                                          },
+                                          "inputs": {
+                                            "DO": {
+                                              "block": {
+                                                "type": "variables_set",
+                                                "id": "f~TLSU%=zi}0:s+Vo,+(",
+                                                "icons": {
+                                                  "comment": {
+                                                    "text": "Присваивает переменной значение вставки",
+                                                    "pinned": false,
+                                                    "height": 74,
+                                                    "width": 211
+                                                  }
+                                                },
+                                                "fields": {
+                                                  "VAR": {
+                                                    "id": "aD|4tkfEjXF(W_T4]K,P",
+                                                    "name": "response",
+                                                    "type": ""
+                                                  }
+                                                },
+                                                "inputs": {
+                                                  "VALUE": {
+                                                    "block": {
+                                                      "type": "response_api_2",
+                                                      "id": "T5L,WZNdz/pFE8[EtJnv",
+                                                      "fields": {
+                                                        "FIELDVALUE": "'get'",
+                                                        "FIELDVALUE1": "1",
+                                                        "FIELDVALUE2": false
+                                                      },
+                                                      "inputs": {
+                                                        "VALUE1": {
+                                                          "shadow": {
+                                                            "type": "text",
+                                                            "fields": {
+                                                              "TEXT": ""
+                                                            }
+                                                          },
+                                                          "block": {
+                                                            "type": "variables_get",
+                                                            "id": "({/*CSh),*EU0[}HNR+X",
+                                                            "fields": {
+                                                              "VAR": {
+                                                                "id": ",+#rqL@-%z50m|v3)gN=",
+                                                                "name": "url",
+                                                                "type": ""
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "VALUE2": {
+                                                          "shadow": {
+                                                            "type": "math_number",
+                                                            "id": "-8,TSc)v5rlcAWH|$do3",
+                                                            "fields": {
+                                                              "NUM": 15
+                                                            }
+                                                          }
+                                                        },
+                                                        "VALUE3": {
+                                                          "shadow": {
+                                                            "type": "text",
+                                                            "id": "]7@_@Y[,8A@(eu3SQbUb",
+                                                            "fields": {
+                                                              "TEXT": "utf-8"
+                                                            }
+                                                          }
+                                                        },
+                                                        "VALUE4": {
+                                                          "block": {
+                                                            "type": "logic_null",
+                                                            "id": "V6e-#/WS[}Qz+Sku@Fvh"
+                                                          }
+                                                        },
+                                                        "VALUE5": {
+                                                          "block": {
+                                                            "type": "variables_get",
+                                                            "id": "STE;KWnw.%xy5F_l/(NI",
+                                                            "fields": {
+                                                              "VAR": {
+                                                                "id": ")W7N(]f67]dhaRDzTNY/",
+                                                                "name": "headers",
+                                                                "type": ""
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "VALUE6": {
+                                                          "block": {
+                                                            "type": "variables_get",
+                                                            "id": "^(~6d{l#N21Eip`so;Jf",
+                                                            "fields": {
+                                                              "VAR": {
+                                                                "id": "s$.;3q80C}.GhY-iDNhT",
+                                                                "name": "params",
+                                                                "type": ""
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "VALUE7": {
+                                                          "block": {
+                                                            "type": "variables_get",
+                                                            "id": "Vj@(QhFm=gWP9xPo_-Ah",
+                                                            "fields": {
+                                                              "VAR": {
+                                                                "id": "qU$eH(lGy5sd;9|sM1DY",
+                                                                "name": "body",
+                                                                "type": ""
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "VALUE8": {
+                                                          "block": {
+                                                            "type": "logic_null",
+                                                            "id": "U]Lld-UXxQ+.K^3//jL4"
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "next": {
+                                                  "block": {
+                                                    "type": "variables_set",
+                                                    "id": "WYU|0[*:?*K##{K5]p4B",
+                                                    "fields": {
+                                                      "VAR": {
+                                                        "id": "Vj+?H.0pkbAh4:XTFcLb",
+                                                        "name": "status_code",
+                                                        "type": ""
+                                                      }
+                                                    },
+                                                    "inputs": {
+                                                      "VALUE": {
+                                                        "block": {
+                                                          "type": "list2_obj",
+                                                          "id": "g`%OF1pLo+/_NtMfANyD",
+                                                          "inputs": {
+                                                            "list": {
+                                                              "block": {
+                                                                "type": "variables_get",
+                                                                "id": "sl;L76n]~PF3:uILLk3z",
+                                                                "fields": {
+                                                                  "VAR": {
+                                                                    "id": "aD|4tkfEjXF(W_T4]K,P",
+                                                                    "name": "response",
+                                                                    "type": ""
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "ind1": {
+                                                              "shadow": {
+                                                                "type": "math_number",
+                                                                "fields": {
+                                                                  "NUM": 0
+                                                                }
+                                                              },
+                                                              "block": {
+                                                                "type": "math_number",
+                                                                "id": "{g+O,4lmY-@2S?Tpug4Z",
+                                                                "fields": {
+                                                                  "NUM": 2
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "next": {
+                                                      "block": {
+                                                        "type": "controls_if",
+                                                        "id": "_Ryl^-v]KqJ7U.HV*I7X",
+                                                        "inputs": {
+                                                          "IF0": {
+                                                            "block": {
+                                                              "type": "logic_negate",
+                                                              "id": "%TQ2%#T,xG13dwZ(4+|]",
+                                                              "inputs": {
+                                                                "BOOL": {
+                                                                  "block": {
+                                                                    "type": "logic_operation",
+                                                                    "id": "X,RzwtpgI~%TR/yABFek",
+                                                                    "inline": false,
+                                                                    "fields": {
+                                                                      "OP": "AND"
+                                                                    },
+                                                                    "inputs": {
+                                                                      "A": {
+                                                                        "block": {
+                                                                          "type": "logic_compare",
+                                                                          "id": "thUvKEeRZ!(U-~61vdKr",
+                                                                          "fields": {
+                                                                            "OP": "GTE"
+                                                                          },
+                                                                          "inputs": {
+                                                                            "A": {
+                                                                              "block": {
+                                                                                "type": "variables_get",
+                                                                                "id": "+YL1F}9KIoxC1b)LsD3Z",
+                                                                                "fields": {
+                                                                                  "VAR": {
+                                                                                    "id": "Vj+?H.0pkbAh4:XTFcLb",
+                                                                                    "name": "status_code",
+                                                                                    "type": ""
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            },
+                                                                            "B": {
+                                                                              "block": {
+                                                                                "type": "math_number",
+                                                                                "id": "0V3=/iiacJF{R;d3AKB:",
+                                                                                "fields": {
+                                                                                  "NUM": 200
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      },
+                                                                      "B": {
+                                                                        "block": {
+                                                                          "type": "logic_compare",
+                                                                          "id": "MVJL)@S[GjMaR$J/xs6W",
+                                                                          "fields": {
+                                                                            "OP": "LT"
+                                                                          },
+                                                                          "inputs": {
+                                                                            "A": {
+                                                                              "block": {
+                                                                                "type": "variables_get",
+                                                                                "id": "WW89A(L^Yx+,nM3$*GHS",
+                                                                                "fields": {
+                                                                                  "VAR": {
+                                                                                    "id": "Vj+?H.0pkbAh4:XTFcLb",
+                                                                                    "name": "status_code",
+                                                                                    "type": ""
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            },
+                                                                            "B": {
+                                                                              "block": {
+                                                                                "type": "math_number",
+                                                                                "id": "+ldNfqg$8B4m9F_9Bk0(",
+                                                                                "fields": {
+                                                                                  "NUM": 300
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          },
+                                                          "DO0": {
+                                                            "block": {
+                                                              "type": "call_raise",
+                                                              "id": "ff,GiNZLmE;`MgMPy1uJ",
+                                                              "inputs": {
+                                                                "VALUE": {
+                                                                  "shadow": {
+                                                                    "type": "text",
+                                                                    "fields": {
+                                                                      "TEXT": ""
+                                                                    }
+                                                                  },
+                                                                  "block": {
+                                                                    "type": "text_join",
+                                                                    "id": "Sf^p;:0^/k:_hHeWREyy",
+                                                                    "extraState": {
+                                                                      "itemCount": 4
+                                                                    },
+                                                                    "inputs": {
+                                                                      "ADD0": {
+                                                                        "block": {
+                                                                          "type": "text",
+                                                                          "id": "mEPzCIrvQ!!Kir~5@z~*",
+                                                                          "fields": {
+                                                                            "TEXT": "HTTP-запрос вернул код "
+                                                                          }
+                                                                        }
+                                                                      },
+                                                                      "ADD1": {
+                                                                        "block": {
+                                                                          "type": "variables_get",
+                                                                          "id": "N}r/0K.||,g^e%_30h%c",
+                                                                          "fields": {
+                                                                            "VAR": {
+                                                                              "id": "Vj+?H.0pkbAh4:XTFcLb",
+                                                                              "name": "status_code",
+                                                                              "type": ""
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      },
+                                                                      "ADD2": {
+                                                                        "block": {
+                                                                          "type": "text",
+                                                                          "id": "djQ2-.=-Mq-xA]QooShJ",
+                                                                          "fields": {
+                                                                            "TEXT": ". Детали:"
+                                                                          }
+                                                                        }
+                                                                      },
+                                                                      "ADD3": {
+                                                                        "block": {
+                                                                          "type": "variables_get",
+                                                                          "id": "-pU!SKy/fw-n-FX%Om_b",
+                                                                          "fields": {
+                                                                            "VAR": {
+                                                                              "id": "aD|4tkfEjXF(W_T4]K,P",
+                                                                              "name": "response",
+                                                                              "type": ""
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "group_block",
+                                              "id": "{m-0I@7$Xk0H{Y(%e+%X",
+                                              "fields": {
+                                                "FIELDVALUE": "Сохранение результата при успешном выполнении"
+                                              },
+                                              "inputs": {
+                                                "DO": {
+                                                  "block": {
+                                                    "type": "add_to_dict",
+                                                    "id": ",guzs9=d6v}JYy{uxHPw",
+                                                    "inputs": {
+                                                      "dict": {
+                                                        "block": {
+                                                          "type": "variables_get",
+                                                          "id": "ZF_Yky7|;8o]8-UhzNcX",
+                                                          "fields": {
+                                                            "VAR": {
+                                                              "id": "retry_result_var",
+                                                              "name": "execution_result",
+                                                              "type": ""
+                                                            }
+                                                          }
+                                                        }
+                                                      },
+                                                      "key": {
+                                                        "block": {
+                                                          "type": "text",
+                                                          "id": "wU}!V3!?1tPBT}clw=#_",
+                                                          "fields": {
+                                                            "TEXT": "status"
+                                                          }
+                                                        }
+                                                      },
+                                                      "value": {
+                                                        "block": {
+                                                          "type": "text",
+                                                          "id": "LR%}7/IMWvz^D:Hgc?f0",
+                                                          "fields": {
+                                                            "TEXT": "success"
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    "next": {
+                                                      "block": {
+                                                        "type": "add_to_dict",
+                                                        "id": "=!g;8^g9tVHuQ}:4`MS/",
+                                                        "inputs": {
+                                                          "dict": {
+                                                            "block": {
+                                                              "type": "variables_get",
+                                                              "id": "_yVe)l~Sm,bKx,qj+cki",
+                                                              "fields": {
+                                                                "VAR": {
+                                                                  "id": "retry_result_var",
+                                                                  "name": "execution_result",
+                                                                  "type": ""
+                                                                }
+                                                              }
+                                                            }
+                                                          },
+                                                          "key": {
+                                                            "block": {
+                                                              "type": "text",
+                                                              "id": "_y(G,AYnu?zA%MCQEij`",
+                                                              "fields": {
+                                                                "TEXT": "message"
+                                                              }
+                                                            }
+                                                          },
+                                                          "value": {
+                                                            "block": {
+                                                              "type": "text",
+                                                              "id": "W]_C2ukejJ=(_Ht_1TnU",
+                                                              "fields": {
+                                                                "TEXT": "HTTP-запрос выполнен успешно"
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "next": {
+                                                          "block": {
+                                                            "type": "nested_path_write",
+                                                            "id": "rV.9GxS!NZv.zcb#AGKU",
+                                                            "fields": {
+                                                              "OPERATION": "set"
+                                                            },
+                                                            "inputs": {
+                                                              "DICT": {
+                                                                "block": {
+                                                                  "type": "variables_get",
+                                                                  "id": "|PdY;s#5ynq78L^}|K94",
+                                                                  "fields": {
+                                                                    "VAR": {
+                                                                      "id": "retry_result_var",
+                                                                      "name": "execution_result",
+                                                                      "type": ""
+                                                                    }
+                                                                  }
+                                                                }
+                                                              },
+                                                              "PATH": {
+                                                                "shadow": {
+                                                                  "type": "text",
+                                                                  "fields": {
+                                                                    "TEXT": "data.value"
+                                                                  }
+                                                                },
+                                                                "block": {
+                                                                  "type": "text",
+                                                                  "id": ":Y?FLUv~%~_V:u^Rwdzk",
+                                                                  "fields": {
+                                                                    "TEXT": "data.attempts_used"
+                                                                  }
+                                                                }
+                                                              },
+                                                              "VALUE": {
+                                                                "shadow": {
+                                                                  "type": "text",
+                                                                  "fields": {
+                                                                    "TEXT": ""
+                                                                  }
+                                                                },
+                                                                "block": {
+                                                                  "type": "math_arithmetic",
+                                                                  "id": "uByT4^v?sr~5abg=PcTX",
+                                                                  "fields": {
+                                                                    "OP": "ADD"
+                                                                  },
+                                                                  "inputs": {
+                                                                    "A": {
+                                                                      "shadow": {
+                                                                        "type": "math_number",
+                                                                        "fields": {
+                                                                          "NUM": 1
+                                                                        }
+                                                                      },
+                                                                      "block": {
+                                                                        "type": "variables_get",
+                                                                        "id": "jq$eB08udpxTpau-^Tpb",
+                                                                        "fields": {
+                                                                          "VAR": {
+                                                                            "id": "9UhhpR,eQ5@Q=DJzui(j",
+                                                                            "name": "attempt",
+                                                                            "type": ""
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "B": {
+                                                                      "shadow": {
+                                                                        "type": "math_number",
+                                                                        "id": "Aum:3c0j?t+D,Z}t4K/7",
+                                                                        "fields": {
+                                                                          "NUM": 1
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "next": {
+                                                              "block": {
+                                                                "type": "nested_path_write",
+                                                                "id": "v]QXD$*[g)t9?w$G*7AX",
+                                                                "fields": {
+                                                                  "OPERATION": "set"
+                                                                },
+                                                                "inputs": {
+                                                                  "DICT": {
+                                                                    "block": {
+                                                                      "type": "variables_get",
+                                                                      "id": "G#j}TXpxe-N),QIHmbFB",
+                                                                      "fields": {
+                                                                        "VAR": {
+                                                                          "id": "retry_result_var",
+                                                                          "name": "execution_result",
+                                                                          "type": ""
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  },
+                                                                  "PATH": {
+                                                                    "shadow": {
+                                                                      "type": "text",
+                                                                      "fields": {
+                                                                        "TEXT": "data.value"
+                                                                      }
+                                                                    },
+                                                                    "block": {
+                                                                      "type": "text",
+                                                                      "id": "Hr0fCf.;]%Eeb|3%%[V-",
+                                                                      "fields": {
+                                                                        "TEXT": "data.response_result"
+                                                                      }
+                                                                    }
+                                                                  },
+                                                                  "VALUE": {
+                                                                    "shadow": {
+                                                                      "type": "text",
+                                                                      "fields": {
+                                                                        "TEXT": ""
+                                                                      }
+                                                                    },
+                                                                    "block": {
+                                                                      "type": "list2_obj",
+                                                                      "id": "-8lBJ~h7})!gm0qu}kyi",
+                                                                      "inputs": {
+                                                                        "list": {
+                                                                          "block": {
+                                                                            "type": "variables_get",
+                                                                            "id": "-%mMjL^$^a;D`Xa7v-=k",
+                                                                            "fields": {
+                                                                              "VAR": {
+                                                                                "id": "aD|4tkfEjXF(W_T4]K,P",
+                                                                                "name": "response",
+                                                                                "type": ""
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "ind1": {
+                                                                          "shadow": {
+                                                                            "type": "math_number",
+                                                                            "fields": {
+                                                                              "NUM": 0
+                                                                            }
+                                                                          },
+                                                                          "block": {
+                                                                            "type": "math_number",
+                                                                            "id": "|0X^ncJhYO$;qb#FGlZP",
+                                                                            "fields": {
+                                                                              "NUM": 0
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "next": {
+                                                                  "block": {
+                                                                    "type": "nested_path_write",
+                                                                    "id": "*R3?5Fpn.f$P.(YvJeJ@",
+                                                                    "fields": {
+                                                                      "OPERATION": "set"
+                                                                    },
+                                                                    "inputs": {
+                                                                      "DICT": {
+                                                                        "block": {
+                                                                          "type": "variables_get",
+                                                                          "id": "58jU48,lh(wa*q|!dWRQ",
+                                                                          "fields": {
+                                                                            "VAR": {
+                                                                              "id": "retry_result_var",
+                                                                              "name": "execution_result",
+                                                                              "type": ""
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      },
+                                                                      "PATH": {
+                                                                        "shadow": {
+                                                                          "type": "text",
+                                                                          "fields": {
+                                                                            "TEXT": "data.value"
+                                                                          }
+                                                                        },
+                                                                        "block": {
+                                                                          "type": "text",
+                                                                          "id": "[*:Aj7A?R5Z~M/K~DpgF",
+                                                                          "fields": {
+                                                                            "TEXT": "data.headers"
+                                                                          }
+                                                                        }
+                                                                      },
+                                                                      "VALUE": {
+                                                                        "shadow": {
+                                                                          "type": "text",
+                                                                          "fields": {
+                                                                            "TEXT": ""
+                                                                          }
+                                                                        },
+                                                                        "block": {
+                                                                          "type": "list2_obj",
+                                                                          "id": "%;KpBNo6^9zc~=WMH{-Y",
+                                                                          "inputs": {
+                                                                            "list": {
+                                                                              "block": {
+                                                                                "type": "variables_get",
+                                                                                "id": "12Iu]-8WTk|o%?WEx=RQ",
+                                                                                "fields": {
+                                                                                  "VAR": {
+                                                                                    "id": "aD|4tkfEjXF(W_T4]K,P",
+                                                                                    "name": "response",
+                                                                                    "type": ""
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            },
+                                                                            "ind1": {
+                                                                              "shadow": {
+                                                                                "type": "math_number",
+                                                                                "fields": {
+                                                                                  "NUM": 0
+                                                                                }
+                                                                              },
+                                                                              "block": {
+                                                                                "type": "math_number",
+                                                                                "id": "p[QURG5@_@XZx8wrJMuO",
+                                                                                "fields": {
+                                                                                  "NUM": 1
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "next": {
+                                                                      "block": {
+                                                                        "type": "nested_path_write",
+                                                                        "id": "6#WQ$2dfFnRlmnBQS-nW",
+                                                                        "fields": {
+                                                                          "OPERATION": "set"
+                                                                        },
+                                                                        "inputs": {
+                                                                          "DICT": {
+                                                                            "block": {
+                                                                              "type": "variables_get",
+                                                                              "id": "i$x-#V`$=a_!p%xb/*Kw",
+                                                                              "fields": {
+                                                                                "VAR": {
+                                                                                  "id": "retry_result_var",
+                                                                                  "name": "execution_result",
+                                                                                  "type": ""
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "PATH": {
+                                                                            "shadow": {
+                                                                              "type": "text",
+                                                                              "fields": {
+                                                                                "TEXT": "data.value"
+                                                                              }
+                                                                            },
+                                                                            "block": {
+                                                                              "type": "text",
+                                                                              "id": "t^,FU1T/x1yO|KW|~Q?@",
+                                                                              "fields": {
+                                                                                "TEXT": "data.status_code"
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "VALUE": {
+                                                                            "shadow": {
+                                                                              "type": "text",
+                                                                              "fields": {
+                                                                                "TEXT": ""
+                                                                              }
+                                                                            },
+                                                                            "block": {
+                                                                              "type": "variables_get",
+                                                                              "id": "!K#~Y.6Q3ET$pXDUmlB]",
+                                                                              "fields": {
+                                                                                "VAR": {
+                                                                                  "id": "Vj+?H.0pkbAh4:XTFcLb",
+                                                                                  "name": "status_code",
+                                                                                  "type": ""
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "next": {
+                                                "block": {
+                                                  "type": "procedures_ifreturn",
+                                                  "id": "43?F-5_B%4E.5Z0kcs|P",
+                                                  "extraState": "<mutation value=\"1\"></mutation>",
+                                                  "inputs": {
+                                                    "CONDITION": {
+                                                      "block": {
+                                                        "type": "logic_boolean",
+                                                        "id": "^](rBd^{p40OJJ!=sWLZ",
+                                                        "fields": {
+                                                          "BOOL": "TRUE"
+                                                        }
+                                                      }
+                                                    },
+                                                    "VALUE": {
+                                                      "block": {
+                                                        "type": "variables_get",
+                                                        "id": "X-*sAr3ixY4?x_HqZ?^j",
+                                                        "fields": {
+                                                          "VAR": {
+                                                            "id": "retry_result_var",
+                                                            "name": "execution_result",
+                                                            "type": ""
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "except": {
+                                    "block": {
+                                      "type": "math_change",
+                                      "id": "8RG?O.4`8g^GKp*=#x?.",
+                                      "fields": {
+                                        "VAR": {
+                                          "id": "9UhhpR,eQ5@Q=DJzui(j",
+                                          "name": "attempt",
+                                          "type": ""
+                                        }
+                                      },
+                                      "inputs": {
+                                        "DELTA": {
+                                          "shadow": {
+                                            "type": "math_number",
+                                            "id": "!)N8L.2+6+oz1|F[x/#W",
+                                            "fields": {
+                                              "NUM": 1
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "next": {
+                                        "block": {
+                                          "type": "variables_set",
+                                          "id": "voaGBp7l,U@RxF~ZI6Aq",
+                                          "fields": {
+                                            "VAR": {
+                                              "id": "rlp:P3XnhP`#*~QHr,Ms",
+                                              "name": "error_message",
+                                              "type": ""
+                                            }
+                                          },
+                                          "inputs": {
+                                            "VALUE": {
+                                              "block": {
+                                                "type": "text_join",
+                                                "id": "YskHf-=a[B+]drSBY)K:",
+                                                "extraState": {
+                                                  "itemCount": 2
+                                                },
+                                                "inputs": {
+                                                  "ADD0": {
+                                                    "block": {
+                                                      "type": "f_string",
+                                                      "id": "=#6Fdurr7I9nUVHLA4ta",
+                                                      "extraState": {},
+                                                      "fields": {
+                                                        "TEXT": "Ошибка при попытке {attempt}. Подробнее: "
+                                                      }
+                                                    }
+                                                  },
+                                                  "ADD1": {
+                                                    "block": {
+                                                      "type": "variables_get",
+                                                      "id": ".dLhm!Lo`uO=n8n|Yx]I",
+                                                      "fields": {
+                                                        "VAR": {
+                                                          "id": "retry_error_description_var",
+                                                          "name": "error_description",
+                                                          "type": ""
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "next": {
+                                            "block": {
+                                              "type": "nested_path_write",
+                                              "id": "wt=MHvsS.)f[~-U(jV:?",
+                                              "fields": {
+                                                "OPERATION": "append"
+                                              },
+                                              "inputs": {
+                                                "DICT": {
+                                                  "block": {
+                                                    "type": "variables_get",
+                                                    "id": "5m-x6JS5Wvi1MpC?*kkT",
+                                                    "fields": {
+                                                      "VAR": {
+                                                        "id": "retry_result_var",
+                                                        "name": "execution_result",
+                                                        "type": ""
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "PATH": {
+                                                  "shadow": {
+                                                    "type": "text",
+                                                    "fields": {
+                                                      "TEXT": "data.value"
+                                                    }
+                                                  },
+                                                  "block": {
+                                                    "type": "text",
+                                                    "id": "kql.9eUp:TNMsfXGn%92",
+                                                    "fields": {
+                                                      "TEXT": "data.errors"
+                                                    }
+                                                  }
+                                                },
+                                                "VALUE": {
+                                                  "shadow": {
+                                                    "type": "text",
+                                                    "fields": {
+                                                      "TEXT": ""
+                                                    }
+                                                  },
+                                                  "block": {
+                                                    "type": "variables_get",
+                                                    "id": "k2~h/Q(7s@:]BLJA(,E;",
+                                                    "fields": {
+                                                      "VAR": {
+                                                        "id": "rlp:P3XnhP`#*~QHr,Ms",
+                                                        "name": "error_message",
+                                                        "type": ""
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "next": {
+                                                "block": {
+                                                  "type": "write_log",
+                                                  "id": ",7r?Q+hFmaKJmmSNQ#}9",
+                                                  "fields": {
+                                                    "FIELDVALUE1": "warning"
+                                                  },
+                                                  "inputs": {
+                                                    "VALUE1": {
+                                                      "shadow": {
+                                                        "type": "text",
+                                                        "fields": {
+                                                          "TEXT": ""
+                                                        }
+                                                      },
+                                                      "block": {
+                                                        "type": "variables_get",
+                                                        "id": "kC|[oAn@h#/VmJ8@?$Bt",
+                                                        "fields": {
+                                                          "VAR": {
+                                                            "id": "rlp:P3XnhP`#*~QHr,Ms",
+                                                            "name": "error_message",
+                                                            "type": ""
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "next": {
+                                                    "block": {
+                                                      "type": "controls_if",
+                                                      "id": "UN!QaPyPg)laN-7SJy`:",
+                                                      "inputs": {
+                                                        "IF0": {
+                                                          "block": {
+                                                            "type": "logic_compare",
+                                                            "id": "!t7;cLp{)qJC?Bo^^Pcd",
+                                                            "fields": {
+                                                              "OP": "LT"
+                                                            },
+                                                            "inputs": {
+                                                              "A": {
+                                                                "block": {
+                                                                  "type": "variables_get",
+                                                                  "id": ":_U,7P+fLkLJ%J?s!3J:",
+                                                                  "fields": {
+                                                                    "VAR": {
+                                                                      "id": "9UhhpR,eQ5@Q=DJzui(j",
+                                                                      "name": "attempt",
+                                                                      "type": ""
+                                                                    }
+                                                                  }
+                                                                }
+                                                              },
+                                                              "B": {
+                                                                "block": {
+                                                                  "type": "variables_get",
+                                                                  "id": "2T|ryAl1kHuc*D;re^VR",
+                                                                  "fields": {
+                                                                    "VAR": {
+                                                                      "id": "BFsaYuV(zGQHr_!vd81Y",
+                                                                      "name": "max_retries",
+                                                                      "type": ""
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "DO0": {
+                                                          "block": {
+                                                            "type": "control_delay_2",
+                                                            "id": "EpW,TlUbdiv9Q17O,yb;",
+                                                            "inputs": {
+                                                              "VALUE1": {
+                                                                "block": {
+                                                                  "type": "variables_get",
+                                                                  "id": "2{.aPDWjr@^R?-6RA+#q",
+                                                                  "fields": {
+                                                                    "VAR": {
+                                                                      "id": "GAhpSNPMIpAeDG-$I?OA",
+                                                                      "name": "retry_delay",
+                                                                      "type": ""
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "error_description": {
+                                    "block": {
+                                      "type": "variables_get",
+                                      "id": "u.i!UEQ4BS,6KD|d=H!0",
+                                      "fields": {
+                                        "VAR": {
+                                          "id": "retry_error_description_var",
+                                          "name": "error_description",
+                                          "type": ""
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "next": {
+                            "block": {
+                              "type": "group_block",
+                              "id": "Vu=cbUZO5$*GrEu`S!dD",
+                              "fields": {
+                                "FIELDVALUE": "Сохранение результата при ошибке"
+                              },
+                              "inputs": {
+                                "DO": {
+                                  "block": {
+                                    "type": "add_to_dict",
+                                    "id": "}WMtkPx-KAl^jL67F.3h",
+                                    "inline": false,
+                                    "inputs": {
+                                      "dict": {
+                                        "block": {
+                                          "type": "variables_get",
+                                          "id": "y?Y~oSmWWYa95+lJuWXO",
+                                          "fields": {
+                                            "VAR": {
+                                              "id": "retry_result_var",
+                                              "name": "execution_result",
+                                              "type": ""
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "key": {
+                                        "block": {
+                                          "type": "text",
+                                          "id": "kpIzS8Si`Vm+}jEJSUF0",
+                                          "fields": {
+                                            "TEXT": "status"
+                                          }
+                                        }
+                                      },
+                                      "value": {
+                                        "block": {
+                                          "type": "text",
+                                          "id": "pGKj-_T#=8XcPGZLmPR2",
+                                          "fields": {
+                                            "TEXT": "error"
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "next": {
+                                      "block": {
+                                        "type": "add_to_dict",
+                                        "id": "!;_b[(d%8x)IjKWnHFEt",
+                                        "inline": false,
+                                        "inputs": {
+                                          "dict": {
+                                            "block": {
+                                              "type": "variables_get",
+                                              "id": "v/S@L,~Wl:R8`m@-t~=#",
+                                              "fields": {
+                                                "VAR": {
+                                                  "id": "retry_result_var",
+                                                  "name": "execution_result",
+                                                  "type": ""
+                                                }
+                                              }
+                                            }
+                                          },
+                                          "key": {
+                                            "block": {
+                                              "type": "text",
+                                              "id": "=nj:D*3uu1~HD[pw-JVP",
+                                              "fields": {
+                                                "TEXT": "message"
+                                              }
+                                            }
+                                          },
+                                          "value": {
+                                            "block": {
+                                              "type": "f_string",
+                                              "id": "3KfVKwBFo+?PC?HP`s+z",
+                                              "extraState": {},
+                                              "fields": {
+                                                "TEXT": "Не удалось выполнить HTTP-запрос после {max_retries} попыток"
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "next": {
+                                          "block": {
+                                            "type": "nested_path_write",
+                                            "id": "_RrWDJf$5aXvgWz)3T_u",
+                                            "fields": {
+                                              "OPERATION": "set"
+                                            },
+                                            "inputs": {
+                                              "DICT": {
+                                                "block": {
+                                                  "type": "variables_get",
+                                                  "id": "!GFcBoU$fA?XZh+~Qzu8",
+                                                  "fields": {
+                                                    "VAR": {
+                                                      "id": "retry_result_var",
+                                                      "name": "execution_result",
+                                                      "type": ""
+                                                    }
+                                                  }
+                                                }
+                                              },
+                                              "PATH": {
+                                                "shadow": {
+                                                  "type": "text",
+                                                  "fields": {
+                                                    "TEXT": "data.value"
+                                                  }
+                                                },
+                                                "block": {
+                                                  "type": "text",
+                                                  "id": "6k4j~J*_DC)W%*W@VKEQ",
+                                                  "fields": {
+                                                    "TEXT": "data.attempts_used"
+                                                  }
+                                                }
+                                              },
+                                              "VALUE": {
+                                                "shadow": {
+                                                  "type": "text",
+                                                  "fields": {
+                                                    "TEXT": ""
+                                                  }
+                                                },
+                                                "block": {
+                                                  "type": "variables_get",
+                                                  "id": "!dOcUfz:{5|#m}E2B)WH",
+                                                  "fields": {
+                                                    "VAR": {
+                                                      "id": "9UhhpR,eQ5@Q=DJzui(j",
+                                                      "name": "attempt",
+                                                      "type": ""
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            "next": {
+                                              "block": {
+                                                "type": "add_to_dict",
+                                                "id": "}T7^GkM~ps[`1iMZuS{q",
+                                                "inline": false,
+                                                "inputs": {
+                                                  "dict": {
+                                                    "block": {
+                                                      "type": "variables_get",
+                                                      "id": ")avrljqpKAh2Iei:o5Of",
+                                                      "fields": {
+                                                        "VAR": {
+                                                          "id": "retry_result_var",
+                                                          "name": "execution_result",
+                                                          "type": ""
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "key": {
+                                                    "block": {
+                                                      "type": "text",
+                                                      "id": "N,A%T$/f9wde#?r{ovGE",
+                                                      "fields": {
+                                                        "TEXT": "error_description"
+                                                      }
+                                                    }
+                                                  },
+                                                  "value": {
+                                                    "block": {
+                                                      "type": "variables_get",
+                                                      "id": "l,/2#CMy[v%Z1tv!u64@",
+                                                      "fields": {
+                                                        "VAR": {
+                                                          "id": "retry_error_description_var",
+                                                          "name": "error_description",
+                                                          "type": ""
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "next": {
+                                                  "block": {
+                                                    "type": "controls_if",
+                                                    "id": "vX)wg`TuaGHz!S1j[X9,",
+                                                    "inputs": {
+                                                      "IF0": {
+                                                        "block": {
+                                                          "type": "logic_negate",
+                                                          "id": "RFb%y(P{yAVP7tg[hzGP",
+                                                          "inputs": {
+                                                            "BOOL": {
+                                                              "block": {
+                                                                "type": "lists_isEmpty",
+                                                                "id": "NCvQS-1O?F$6ZG]Ym#%X",
+                                                                "inputs": {
+                                                                  "VALUE": {
+                                                                    "block": {
+                                                                      "type": "variables_get",
+                                                                      "id": "EEF8_Cm4Y=!DyuG#{zb.",
+                                                                      "fields": {
+                                                                        "VAR": {
+                                                                          "id": "aD|4tkfEjXF(W_T4]K,P",
+                                                                          "name": "response",
+                                                                          "type": ""
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      },
+                                                      "DO0": {
+                                                        "block": {
+                                                          "type": "nested_path_write",
+                                                          "id": "Mad2revRyY7uF/1sA,-7",
+                                                          "fields": {
+                                                            "OPERATION": "set"
+                                                          },
+                                                          "inputs": {
+                                                            "DICT": {
+                                                              "block": {
+                                                                "type": "variables_get",
+                                                                "id": "u!vYkL1+(sb7YNUAQ!Vb",
+                                                                "fields": {
+                                                                  "VAR": {
+                                                                    "id": "retry_result_var",
+                                                                    "name": "execution_result",
+                                                                    "type": ""
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "PATH": {
+                                                              "shadow": {
+                                                                "type": "text",
+                                                                "fields": {
+                                                                  "TEXT": "data.value"
+                                                                }
+                                                              },
+                                                              "block": {
+                                                                "type": "text",
+                                                                "id": "a]}gxpd{2,#_YpYubVQT",
+                                                                "fields": {
+                                                                  "TEXT": "data.response_result"
+                                                                }
+                                                              }
+                                                            },
+                                                            "VALUE": {
+                                                              "shadow": {
+                                                                "type": "text",
+                                                                "fields": {
+                                                                  "TEXT": ""
+                                                                }
+                                                              },
+                                                              "block": {
+                                                                "type": "list2_obj",
+                                                                "id": "d7VOuLk;:6|J7r*erS,q",
+                                                                "inputs": {
+                                                                  "list": {
+                                                                    "block": {
+                                                                      "type": "variables_get",
+                                                                      "id": "S#6XLG9SBy+BFVKy)G:o",
+                                                                      "fields": {
+                                                                        "VAR": {
+                                                                          "id": "aD|4tkfEjXF(W_T4]K,P",
+                                                                          "name": "response",
+                                                                          "type": ""
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  },
+                                                                  "ind1": {
+                                                                    "shadow": {
+                                                                      "type": "math_number",
+                                                                      "fields": {
+                                                                        "NUM": 0
+                                                                      }
+                                                                    },
+                                                                    "block": {
+                                                                      "type": "math_number",
+                                                                      "id": "Cr@u6y8Yj2rLkUamnXX)",
+                                                                      "fields": {
+                                                                        "NUM": 0
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          },
+                                                          "next": {
+                                                            "block": {
+                                                              "type": "nested_path_write",
+                                                              "id": "YHjBaA@4]ziY4{;?M=BG",
+                                                              "fields": {
+                                                                "OPERATION": "set"
+                                                              },
+                                                              "inputs": {
+                                                                "DICT": {
+                                                                  "block": {
+                                                                    "type": "variables_get",
+                                                                    "id": "+]$+5Yx(8!qZz%=x87]}",
+                                                                    "fields": {
+                                                                      "VAR": {
+                                                                        "id": "retry_result_var",
+                                                                        "name": "execution_result",
+                                                                        "type": ""
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "PATH": {
+                                                                  "shadow": {
+                                                                    "type": "text",
+                                                                    "fields": {
+                                                                      "TEXT": "data.value"
+                                                                    }
+                                                                  },
+                                                                  "block": {
+                                                                    "type": "text",
+                                                                    "id": "}y$_J5IPQ`=0FmRu|+7w",
+                                                                    "fields": {
+                                                                      "TEXT": "data.headers"
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "VALUE": {
+                                                                  "shadow": {
+                                                                    "type": "text",
+                                                                    "fields": {
+                                                                      "TEXT": ""
+                                                                    }
+                                                                  },
+                                                                  "block": {
+                                                                    "type": "list2_obj",
+                                                                    "id": "+Sq$V%w57wNw+t9emxyQ",
+                                                                    "inputs": {
+                                                                      "list": {
+                                                                        "block": {
+                                                                          "type": "variables_get",
+                                                                          "id": "rXolg8j0gxs{*jK8A^e0",
+                                                                          "fields": {
+                                                                            "VAR": {
+                                                                              "id": "aD|4tkfEjXF(W_T4]K,P",
+                                                                              "name": "response",
+                                                                              "type": ""
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      },
+                                                                      "ind1": {
+                                                                        "shadow": {
+                                                                          "type": "math_number",
+                                                                          "fields": {
+                                                                            "NUM": 0
+                                                                          }
+                                                                        },
+                                                                        "block": {
+                                                                          "type": "math_number",
+                                                                          "id": "R%K4${NIx]`|ka7;7Y#n",
+                                                                          "fields": {
+                                                                            "NUM": 1
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              },
+                                                              "next": {
+                                                                "block": {
+                                                                  "type": "nested_path_write",
+                                                                  "id": "hTe7f-drriir}*KDxCuD",
+                                                                  "fields": {
+                                                                    "OPERATION": "set"
+                                                                  },
+                                                                  "inputs": {
+                                                                    "DICT": {
+                                                                      "block": {
+                                                                        "type": "variables_get",
+                                                                        "id": "s-mBiK[NZOZZaeompMc@",
+                                                                        "fields": {
+                                                                          "VAR": {
+                                                                            "id": "retry_result_var",
+                                                                            "name": "execution_result",
+                                                                            "type": ""
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "PATH": {
+                                                                      "shadow": {
+                                                                        "type": "text",
+                                                                        "fields": {
+                                                                          "TEXT": "data.value"
+                                                                        }
+                                                                      },
+                                                                      "block": {
+                                                                        "type": "text",
+                                                                        "id": "S(X91j-R*Y-_[ut=i[P_",
+                                                                        "fields": {
+                                                                          "TEXT": "data.status_code"
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    "VALUE": {
+                                                                      "shadow": {
+                                                                        "type": "text",
+                                                                        "fields": {
+                                                                          "TEXT": ""
+                                                                        }
+                                                                      },
+                                                                      "block": {
+                                                                        "type": "list2_obj",
+                                                                        "id": "A~OO{[NOf4usneks|#W?",
+                                                                        "inputs": {
+                                                                          "list": {
+                                                                            "block": {
+                                                                              "type": "variables_get",
+                                                                              "id": "tJow_-IsgZ0_m41^r+(3",
+                                                                              "fields": {
+                                                                                "VAR": {
+                                                                                  "id": "aD|4tkfEjXF(W_T4]K,P",
+                                                                                  "name": "response",
+                                                                                  "type": ""
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          },
+                                                                          "ind1": {
+                                                                            "shadow": {
+                                                                              "type": "math_number",
+                                                                              "fields": {
+                                                                                "NUM": 0
+                                                                              }
+                                                                            },
+                                                                            "block": {
+                                                                              "type": "math_number",
+                                                                              "id": "d0*Yr#$S[gr[x|CoZvP_",
+                                                                              "fields": {
+                                                                                "NUM": 2
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "next": {
+              "block": {
+                "type": "comment_block",
+                "id": "+0Bl2jp6O_i+,x[so]YZ",
+                "fields": {
+                  "TEXT": "📝 Комментарий\r\nВозврат результата"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "RETURN": {
+      "block": {
+        "type": "variables_get",
+        "id": "J4CN##VUXfNfTJP549/e",
+        "fields": {
+          "VAR": {
+            "id": "retry_result_var",
+            "name": "execution_result",
+            "type": ""
+          }
+        }
+      }
+    }
+  }
+}
